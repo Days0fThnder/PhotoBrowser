@@ -1,6 +1,6 @@
 @CHARSET "ISO-8859-1";
 body {
-    background-color: #002880;
+    background-color: #002880 !important;
     
 }
 div{
@@ -48,6 +48,32 @@ div{
 .nav-searchBar {
 	width:93%;
 	height: 100px;
+}
+.slider {
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    background: #e6e6e6;
+    border: 20px solid #FFF;
+    margin-top: 20px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.arrow.prev {
+	opacity: 0.2;
+    left: 20px;
+    background-image: url("../assets/image/arrow_prev.png") !important;
+}
+
+.arrow.next {
+    opacity: 0.2;
+    right: 20px;
+    background-image: url(../assets/image/arrow_next.png);
 }
 #rcorners1 {
     border-radius: 20px;

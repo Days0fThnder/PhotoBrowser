@@ -3,8 +3,11 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<script src="scripts/angular.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
 		<script src="scripts/Script.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
 		<!-- Add jQuery library -->
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 		
@@ -29,23 +32,27 @@
 			<div id="header">
 				<h1>Photo Browser</h1>
 			</div>
+			<div style="float:left; height:400px; width:200px ">
+				<a class="arrow prev" href="#" style="float:left; height:400px; width:200px " ng-click="nextSlide()"></a>
+			</div>
+			<div style="float:right; height:400px; width:200px ">
+				<a class="arrow next" href="#" style="float:right; height:400px; width:200px " ng-click="nextSlide()"></a>
+			</div>
 			<div id="section">
-				<img ng-src="{{galaxy.galPic}}"
-					alt="{{galaxy.name}}"
-					style="height:450px; width:500px ">
+				<img ng-repeat="image in images" ng-hide="!isCurrentImageIndex($index)" ng-src="{{image.pic}}" style="height:450px; width:500px ">
 			</div>
 			<div id="nav">
 				<div class="nav-Grid">
 					<div class="nav-menu">
 						<div fancybox ng-click="openFancybox('template.html')" >
-							<img src="image/popupimage.png" style="height:70px; width:100px "/>
+							<img src="assets/image/popupimage.png" style="height:70px; width:100px; "/>
 						</div>
 						</div>
 					<div class="nav-menu">
-						<img src="image/index2.png" style="height:70px; width:100px " ></img>
+						<img src="assets/image/index2.png" style="height:70px; width:100px " ></img>
 					</div>
 					<div class="nav-menu">
-						<img src="image/details2.png" style="height:70px; width:100px " ></img>
+						<img src="assets/image/details2.png" style="height:70px; width:100px " ></img>
 					</div>
 				</div>
 				<div id="nav-search">

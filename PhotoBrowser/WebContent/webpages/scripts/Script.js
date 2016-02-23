@@ -1,18 +1,38 @@
 //<reference path="angular.min.js" />
 
-var myApp = angular.module("homePage",[]);
+var myApp = angular.module("homePage",["ngAnimate"]);
 myApp.controller("mainController", function ($scope) {
-        var galaxy = {
-            name: "spiral",
-            size: "200 million light years across",
-            galPic: "image/galaxy.jpg"
+        $scope.images = [
+			{
+				name: "spiral",
+				description: "200 million light years across",
+				pic: "images/galaxy.jpg"
+			},
+			
+			{
+				name: "Walter",
+				description: "200 million light years across",
+				pic: "images/WW.jpg"
+			}
+        ];
+        
+        $scope.currentIndex = 0;
+
+        $scope.setCurrentImageIndex = function (index) {
+            $scope.currentIndex = index;
         };
-    
-     $scope.galaxy = galaxy;
-     $scope.popup = function show_popup() {
-    		$(".fancybox").fancybox();
-    		return true;
-	};
+
+        $scope.isCurrentImageIndex = function (index) {
+            return $scope.currentIndex === index;
+        };
+        $scope.prevSlide = function () {
+            $scope.currentIndex = ($scope.currentIndex < $scope.images.length - 1) ? ++$scope.currentIndex : 0;
+        };
+
+        $scope.nextSlide = function () {
+            $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.images.length - 1;
+        };
+
 });
 myApp.directive('fancybox', function ($compile, $http) {
     return {
