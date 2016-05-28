@@ -1,6 +1,6 @@
 @CHARSET "ISO-8859-1";
 body {
-    background-color: #002880 !important;
+    background-color: #0191D8 !important;
     
 }
 div{
@@ -11,8 +11,8 @@ div{
 	margin: 0 auto; 
 }
 #header {
-    background-color:#D9DDE8;
-    color:#6699ff;
+    background-color:white;
+    color:#0191D8 !important;
     text-align:center;
     padding:5px;
 }
@@ -44,6 +44,7 @@ div{
     float: left;
     width: 250px;
     height: 100px;
+    opacity: 0.2;
 }
 .nav-searchBar {
 	width:93%;
@@ -72,6 +73,10 @@ div{
 
 .arrow.next {
     opacity: 0.2;
+    right: 20px;
+    background-image: url(../assets/image/arrow_next.png);
+}
+a.arrow.next:hover {
     right: 20px;
     background-image: url(../assets/image/arrow_next.png);
 }
